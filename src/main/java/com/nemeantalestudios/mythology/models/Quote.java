@@ -11,10 +11,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document(collection = "categories")
-public class Category {
+@Document(collection = "quotes")
+public class Quote {
+
     @Id
     public String id;
-    public String name;
-    public String description;
+    public String quote;
+    public String note;
+    public String author;
+    public Integer likes;
+
+
 }

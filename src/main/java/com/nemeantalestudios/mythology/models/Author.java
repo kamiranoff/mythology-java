@@ -2,8 +2,8 @@ package com.nemeantalestudios.mythology.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 /**
  * @author kevin.amiranoff on 23/06/2018
@@ -11,10 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document(collection = "categories")
-public class Category {
-    @Id
-    public String id;
+public class Author {
+
     public String name;
     public String description;
+    public List<Book> books;
 }

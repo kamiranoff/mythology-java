@@ -28,9 +28,7 @@ public class MythologyApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Optional<Figure> chronos = figureRepository.findById("5893a17a88dcfdf6dfa73429");
-        List<Figure> figureSet = figureRepository.findAll();
-        System.out.println(figureSet.size());
+        Optional<Figure> chronos = figureRepository.findById("5893a17a88dcfdf6dfa73449");
 
         chronos.ifPresent(figure -> {
             System.out.println(figure.name);
@@ -39,6 +37,9 @@ public class MythologyApplication implements CommandLineRunner {
             System.out.println(figure.immortal);
             System.out.println(figure.romanName);
             System.out.println(figure.greekName);
+            System.out.println(figure.gender);
+            System.out.println(figureRepository.findById(figure.relatives.father).get().name);
+            System.out.println(figureRepository.findById(figure.relatives.mother).get().name);
         });
     }
 }
