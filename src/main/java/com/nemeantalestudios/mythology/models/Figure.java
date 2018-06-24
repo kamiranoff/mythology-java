@@ -3,9 +3,11 @@ package com.nemeantalestudios.mythology.models;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,7 +27,10 @@ public class Figure {
     public String description;
     public String category;
     public String immortal;
-    public String gender;
-    public Map<String, String> images = new HashMap<>();
+    public Gender gender;
     public Relative relatives;
+
+    @DBRef
+    public List<Book> books;
+
 }
